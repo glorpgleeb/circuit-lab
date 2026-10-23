@@ -1,6 +1,6 @@
 # Glorp Lab
 
-<img src="public/favicon.svg" alt="Glorp, le monstre triangle vert à un œil" width="64">
+<img src="public/avatar.png" alt="Avatar GitHub de glorpgleeb" width="64">
 
 Outil personnel de conception électronique qui tourne entièrement dans le navigateur : aucun compte, aucun serveur, aucune donnée envoyée.
 

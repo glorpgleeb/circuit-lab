@@ -73,6 +73,7 @@ body {
   background: var(--panel);
   border-bottom: 1px solid var(--border);
 }
+.brand .avatar { border-radius: 50%; }
 .brand { display: flex; align-items: center; gap: 6px; font-weight: 600; letter-spacing: 0.02em; }
 .tabs { display: flex; gap: 2px; height: 100%; }
 .tabs a {
