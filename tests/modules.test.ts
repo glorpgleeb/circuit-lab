@@ -60,7 +60,7 @@ describe('import / export', () => {
 
   it.each([
     ['not json', "Ce n'est pas un fichier JSON"],
-    ['{"a":1}', "Ce n'est pas un fichier de modules Circuit Lab"],
+    ['{"a":1}', "Ce n'est pas un fichier de modules Glorp Lab"],
     ['{"format":"circuit-lab-modules","version":2,"modules":[]}', 'Version de fichier non prise en charge : 2'],
   ])('rejects %s', (text, msg) => expect(parseModuleFile(text).errors).toEqual([msg]));
 

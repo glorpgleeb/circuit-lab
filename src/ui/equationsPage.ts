@@ -207,7 +207,7 @@ export const equationsPage: Page = {
     });
     $('#mod-export-all').addEventListener('click', () => {
       if (!userModules!.length) return msg('Aucun module enregistré à exporter. Utilisez Exporter pour le module courant.', 'warn');
-      download('circuit-lab-modules.json', exportModules(userModules!));
+      download('glorp-lab-modules.json', exportModules(userModules!));
     });
     const fileInput = $<HTMLInputElement>('#mod-file');
     $('#mod-import').addEventListener('click', () => fileInput.click());

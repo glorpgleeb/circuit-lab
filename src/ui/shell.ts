@@ -12,7 +12,7 @@ export function mountShell(app: HTMLElement, pages: Page[]): void {
 
   app.innerHTML = `
     <header class="topbar">
-      <span class="brand">Circuit Lab</span>
+      <span class="brand"><img src="favicon.svg" alt="" width="22" height="22">Glorp Lab</span>
       <nav class="tabs">
         ${pages.map((p) => `<a href="#/${p.id}" data-page="${p.id}">${p.title}</a>`).join('')}
       </nav>

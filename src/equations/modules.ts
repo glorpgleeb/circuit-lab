@@ -204,7 +204,7 @@ export function parseModuleFile(text: string): { modules: ParsedModule[]; errors
     if (!Array.isArray(data.modules)) return { modules: [], errors: ['"modules" doit être une liste'] };
     list = data.modules;
   } else if (isObj(data) && 'formulas' in data) list = [data];
-  else return { modules: [], errors: ["Ce n'est pas un fichier de modules Circuit Lab"] };
+  else return { modules: [], errors: ["Ce n'est pas un fichier de modules Glorp Lab"] };
   if (list.length > LIMITS.modules) return { modules: [], errors: [`Plus de ${LIMITS.modules} modules`] };
 
   const modules: ParsedModule[] = [];
