@@ -242,7 +242,7 @@ export const solverPage: Page = {
           ${s.positions.map((p) => `<td class="mono">${posText(p)}${p === s.positions[s.positions.length - 1] && s.variants ? ` <span class="muted" title="Même résultat avec toutes les valeurs multipliées par une puissance de 10">+${s.variants} décades</span>` : ''}</td>`).join('')}
           <td class="mono">${resultText(s)}</td>
           <td class="mono num">${formatPercent(s.nominalErr)}</td>
-          <td class="mono num">±${formatPercent(s.worstErr, false)}</td>
+          <td class="mono num">±${formatPercent(s.worstErr, false, 4)}</td>
           <td class="mono num">${s.current === undefined ? '—' : formatSI(s.current, 'A', 3)}</td>
           <td class="mono num">${s.maxPartPower === undefined ? '—' : formatSI(s.maxPartPower, 'W', 3)}</td>
           <td class="${s.pass ? 'pass' : 'fail'}" title="${s.pass ? 'Précision respectée' : 'Hors précision'}">${s.pass ? '✓' : '✗'}</td>

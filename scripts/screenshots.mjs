@@ -94,7 +94,6 @@ const SHOTS = [
       await p.press('#f-vout', 'Enter');
     },
   },
-  { name: 'packages', hash: 'packages' },
 ];
 const THEMES = ['light', 'dark', 'black', 'purple'];
 

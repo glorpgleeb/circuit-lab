@@ -85,7 +85,7 @@ body {
 }
 .tabs a:hover { color: var(--text); }
 .tabs a[aria-current="page"] { color: var(--text); border-bottom-color: var(--accent); }
-.tabs a:focus-visible, button:focus-visible, input:focus-visible {
+.tabs a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }

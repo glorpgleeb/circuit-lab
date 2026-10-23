@@ -56,10 +56,10 @@ export function formatSI(x: number, unit = '', sig = 4): string {
 }
 
 /** Signed percentage with 3 significant digits: 0.0123 -> "+1.23 %". */
-export function formatPercent(frac: number, signed = true): string {
+export function formatPercent(frac: number, signed = true, sig = 3): string {
   if (!Number.isFinite(frac)) return '—';
   if (frac === 0) return '0 %';
-  const p = Number((frac * 100).toPrecision(3));
+  const p = Number((frac * 100).toPrecision(sig));
   return `${signed && p > 0 ? '+' : ''}${p} %`;
 }
 

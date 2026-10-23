@@ -9,6 +9,7 @@ import {
 } from '../src/equations/modules';
 import { evaluateSystem, parseSystem, readInput } from '../src/equations/system';
 import { parseUnit, unitName, type Unit } from '../src/units/dims';
+import readme from '../README.md?raw';
 
 /** Evaluate a module with its default values; returns name -> [value, unit name, warnings]. */
 function run(m: Module) {
@@ -112,5 +113,17 @@ describe('browser storage', () => {
     const broken = { getItem: () => { throw new Error('blocked'); }, setItem: () => { throw new Error('quota'); } } as unknown as Storage;
     expect(loadUserModules(broken).error).toMatch(/bloqué/);
     expect(saveUserModules([], broken)).toMatch(/plein ou bloqué/);
+  });
+});
+
+describe('README', () => {
+  it('the JSON example in the README imports without errors', () => {
+    const example = /```json\n(\{\n  "format"[\s\S]*?)```/.exec(readme)![1];
+    const { modules, errors } = parseModuleFile(example);
+    expect(errors).toEqual([]);
+    expect(modules[0].name).toBe('Ondulation de sortie');
+    const r = run({ ...modules[0], id: 'x' });
+    expect(r.Vripple.value).toBeCloseTo(1 / (500e3 * 22e-6), 12);
+    expect(r.Vripple.unit).toBe('V');
   });
 });
